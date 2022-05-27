@@ -1,0 +1,116 @@
+*,
+*::after,
+*::before{
+padding: 0;
+margin: 0;
+border: 0;
+box-sizing: border-box;
+}
+
+html{
+height: 100%;
+}
+
+body{
+counter-reset: score;
+background-image: url("./img/sea.jpg");
+background-repeat: no-repeat;
+min-height: 100%;
+background-size: cover;
+background-position: 0 bottom;
+position: relative;
+font-family:"Montserrat", sans-serif ;
+font-size: 50px;
+color: white;
+font-weight: bold;
+overflow: hidden;
+cursor:url(./img/free.png), pointer; 
+}
+
+.fish{
+width: 62px;
+height: 62px;
+position: relative;
+overflow: hidden;
+left:-10%;
+top: 100px;
+}
+
+.fish label{
+display: inline-block;
+width: 100%;
+height: 100%;
+background-image: url(./img/purple.png);
+background-repeat: no-repeat;
+cursor:url(./img/free.png), pointer; 
+}
+
+.fish input{
+position: absolute;
+left:-80px;
+}
+
+.fish input:checked{
+counter-increment: score;
+}
+
+.fish input:checked + label{
+display: none;
+}
+
+.count{
+position: absolute;
+bottom: 40px;
+left: 50%;
+transform: translateX(-50%);
+}
+
+.count::after{
+ content: counter(score);
+}
+
+.fish1{
+animation: fly1 ease 10s;
+}
+    
+.fish2{
+animation: fly ease 10s 2s;
+}
+    
+.fish3{
+animation: fly ease 10s 3s;
+}
+
+.fish4{
+animation: fly ease 10s;
+}
+.fish5{
+animation: fly ease 10s 4s;
+} 
+            
+@keyframes fly{
+0%{left: -10%;}
+25%{left: 25%;
+top: 50px;
+transform: rotate(60deg);}
+50%{left: 60%;
+top: 350px;}
+75%{left: 80%;
+top: 100px}
+100%{left: 110%;
+top: 300px;}
+}
+
+@keyframes fly1{
+0%{left: -10%;}
+25%{left: 15%;
+top: 350px;
+transform: rotate(360deg);}
+50%{left: 40%;
+top: 100px;}
+75%{left: 70%;
+top: 350px;
+transform: rotate(360deg);}
+100%{left: 110%;
+top: 100px;}
+}
